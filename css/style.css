@@ -1,0 +1,186 @@
+/* Calendar Styles */
+.calendar {width:100%; border-collapse:collapse;}
+.calendar tr.navigation th {padding-bottom:20px;}
+.calendar th.prev-month {text-align:left;}
+.calendar th.current-month {text-align:center; font-size:1.5em;}
+.calendar th.next-month {text-align:right;}
+.calendar tr.weekdays th {text-align:left;}
+.calendar td {width:14%; height:100px; vertical-align:top; border:1px solid #CCC;}
+.calendar td.today {background:#FFD;}
+.calendar td.prev-next {background:#EEE;}
+.calendar td.prev-next span.date {color:#9C9C9C;}
+.calendar td.holiday {background:#DDFFDE;}
+.calendar span.date {display:block; padding:4px; line-height:12px; background:#EEE;}
+.calendar div.day-content {}
+.calendar ul.output {margin:0; padding:0 4px; list-style:none;}
+.calendar ul.output li {margin:0; padding:5px 0; line-height:1em; border-bottom:1px solid #CCC;}
+.calendar ul.output li:last-child {border:0;}
+
+/* Small Calendar */
+.calendar.small {width:auto; border-collapse:separate;}
+.calendar.small tr.navigation th {padding-bottom:5px;}
+.calendar.small tr.navigation th a span {font-size:1.5em;}
+.calendar.small th.current-month {font-size:1em;}
+.calendar.small tr.weekdays th {text-align:center;}
+.calendar.small td {width:auto; height:auto; padding:4px 8px; text-align:center; border:0; background:#EEE;}
+.calendar.small span.date {display:inline; padding:0; background:none;}
+
+.calendar span.date {display:inline; padding:4px; line-height:24px; background:#EEE;
+font-size:24px;
+float:left;
+padding-left:5px;
+color:blue;
+font-weight:bold;
+display:block;
+position:absolute;
+margin:4px;
+
+}
+.calendar td.prev-next span.p,.calendar span.date-7,.calendar span.p{
+color:red;
+
+}
+.calendar td.prev-next span.date-6 ,.calendar span.date-6{
+color:orange;
+
+}
+.calendar td.prev-next span.i ,.calendar span.i{
+color:yellow;
+
+}
+.calendar span.date2 {display:block; padding:4px; line-height:20px; background:#EEE;
+font-size:10px;
+float:left;
+position:relative;
+top:27px;
+padding-left:8px;
+margin:4px;
+}
+.calendar span.datei {
+color:red;
+}
+.calendar {width:100%;margin:0;border:0;padding:0;
+/*border-bottom:0px solid yellow; */
+border-top:0px solid green;
+margin-bottom:0px;margin-left:0em;
+padding-bottom:0px;
+padding-top:0px;
+margin-top:0px;
+margin-bottom:0px;
+height:100%;
+
+} 
+.calendar td.prev-next {background:#fff;}
+.calendar td {
+/*height:540px;
+border-bottom:0px solid blue;
+*/
+height:33.65em;
+border:2px solid #000;
+border-right:1px solid #000;
+
+}
+
+.calendar td.p {
+border:2px solid red;
+border-left:2px solid red;
+
+}
+
+.calendar td.day:after {
+	line-height:30px;
+    /*clip: rect(0px, 190px, 20px, 0px);*/
+    float: left;
+    width: 100%;
+    overflow:hidden;
+    white-space: normal;
+    content: ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . ";
+	/*
+    position: absolute;
+    z-index: -1;*/
+
+}
+.calendar tr.weekdays td {text-align:center; margin:0; text-transform:capitalize;font-weight:normal;
+
+}
+.calendar tr td.Saturday{
+color:orange;
+}
+ .calendar tr td.Sunday {
+color:red;
+} 
+.calendar tr.navigation th {padding:0px; font-size:24px;;padding-top:81px; /* was 89 101 */
+font-weight:normal;
+/*
+border-bottom:0px solid red;
+*/
+}
+body{
+margin:0px 0px;
+}
+
+page[size="A3"],table.calendar {
+  width: 100%;
+  height: 29cm; 
+  border:0px solid red;
+  overflow:hidden;
+
+}
+page[size="A3"][layout="portrait"] {
+  width: 42cm;
+  height: 29.7cm;  
+}
+.calendar tr.weekdays td{
+    color:#333;
+height: 0.3cm;
+border:0px solid green;
+max-height:50px;
+
+}
+
+.navigation th{
+height: 0.4cm; 
+border:0px solid blue;   
+}
+
+@media print {
+    table.calendar {page-break-after: always;}
+}
+
+td.day{
+    height: 100%;  
+}
