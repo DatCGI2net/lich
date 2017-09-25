@@ -11,7 +11,7 @@
 .calendar td.prev-next span.date {color:#9C9C9C;}
 .calendar td.holiday {background:#DDFFDE;}
 .calendar span.date {display:block; padding:4px; line-height:12px; background:#EEE;}
-.calendar div.day-content {}
+/*.calendar div.day-content {}*/
 .calendar ul.output {margin:0; padding:0 4px; list-style:none;}
 .calendar ul.output li {margin:0; padding:5px 0; line-height:1em; border-bottom:1px solid #CCC;}
 .calendar ul.output li:last-child {border:0;}
@@ -128,6 +128,9 @@ border-left:2px solid red;
  ". . . . . . . . . . . . . . . . . . . . "
  ". . . . . . . . . . . . . . . . . . . . "
  ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
  ". . . . . . . . . . . . . . . . . . . . ";
 	/*
     position: absolute;
@@ -138,12 +141,14 @@ border-left:2px solid red;
 
 }
 .calendar tr td.Saturday{
-color:orange;
+	color:#333;
 }
  .calendar tr td.Sunday {
-color:red;
+color:#333;
 } 
-.calendar tr.navigation th {padding:0px; font-size:24px;;padding-top:81px; /* was 89 101 */
+.calendar tr.navigation th {
+padding:0px; font-size:24px;
+padding-top:81px; /* was 89 101 */
 font-weight:normal;
 /*
 border-bottom:0px solid red;
@@ -184,8 +189,162 @@ border:0px solid blue;
 td.day{
     height: 100%;  
 }
-.pdf-button {
-    padding-top: 20px;
+.calendar span.date3 {
+	background: #EEE;
+    display: block;
+    line-height: 20px;
+    font-size: 10px;
+    float: left;
+    position: relative;
+    top: 58px;
+    left: -25px;
+	
+}
+.p-backg{
+	    background: #EEE;
+}
+
+.calendar div.day-content-c{
+	    position: relative;
+    float: left;
+  /*  top: 30px;*/
+    line-height: 30px;
+    /* clip: rect(0px, 190px, 20px, 0px); */
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    white-space: normal;
+}
+.dot-fix{
+	    float: left;
+    width: 100%;
+    overflow: hidden;
+    white-space: normal;
+    margin-top: 0px;
+    max-height: 30px;
+	margin-bottom: 0px;
+}
+.pdf-button{
+	padding-top: 20px;
+	
     left: 0;
     position: fixed;
+
+
+}
+.landscape { 
+    width: 100%; 
+    height: 100%; 
+    margin: 0% 0% 0% 0%; filter: progid:DXImageTransform.Microsoft.BasicImage(Rotation=1); 
+}
+
+td .day-content-c:after {
+line-height:30px;
+    /*clip: rect(0px, 190px, 20px, 0px);*/
+    float: left;
+    width: 100%;
+    overflow:hidden;
+    white-space: normal;
+    content: ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . .";
+}	
+span.fix-add{	
+    float: left;    
+    display: block;
+    position: absolute;
+   
+    
+}
+span.nhs{
+	margin-top: 100px;
+}
+span.nhs-1{
+	margin-top: 130px;
+}
+span.nhs-2{
+	margin-top: 160px;
+}
+span.nhs-3{
+	margin-top: 190px;
+}
+span.nhs-4{
+	margin-top: 220px;
+}
+span.nhs-5{
+	margin-top: 250px;
+}
+span.nhs-6{
+	margin-top: 280px;
+}
+span.tn{
+	margin-top: 400px;
+}
+span.tn1{
+	margin-top: 430px;
+}
+span.tn2{
+	margin-top: 460px;
+}
+span.tn3{
+	margin-top: 490px;
+}
+span.tn4{
+	margin-top: 520px;
+}
+span.tn5{
+	margin-top: 550px;
+}
+span.tn6{
+	margin-top: 580px;
+}
+span.k{
+	margin-top: 700px;
+}
+span.hln{
+	margin-top: 820px;
+}
+span.bs{
+	margin-top: 730px;
+}
+span.nhs-small{
+	margin-top: 820px;
+}
+
+@media print{
+  .pdf-button{
+    display:none;
+  }
 }

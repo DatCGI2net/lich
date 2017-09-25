@@ -1,7 +1,7 @@
 <?php
 
-include 'classes/calendar.php';
-require_once("lich_conv.php");
+include '../classes/calendar.php';
+require_once("../lich_conv.php");
 //$mons=array('th.1',',th.2','th.3','th.4','th.5','th.6','th.7','th.8','th.9','th.10','th.11','th.12');
 $WDAYS=array('Monday' => 'THỨ HAI','Tuesday' => 'THỨ BA','Wednesday' => 'THỨ TƯ','Thursday' => 'THỨ NĂM','Friday' => 'THỨ SÁU','Saturday' => 'THỨ BẢY', 'Sunday' =>'CHỦ NHẬT');
 
@@ -56,27 +56,20 @@ $calendar->standard('today')
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Lịch công tác</title>
-		<link type="text/css" rel="stylesheet" media="all" href="css/style.css?<?php  echo $_GET['x'];?> " />
-        <style type="text/css" media="print">
-.landscape { 
-    width: 100%; 
-    height: 100%; 
-    margin: 0% 0% 0% 0%; filter: progid:DXImageTransform.Microsoft.BasicImage(Rotation=1); 
-}
-
-</style>
+		<link type="text/css" rel="stylesheet" media="all" href="css/style_v2.css?v=1.18" />
+     
 	</head>
-	<body>
+	<body >
 <?php 
 if((!isset($pdf))){
 ?>	
 <div class="pdf-button">
 
 <a id="pdf" href="<?php echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']; ?>?pdf=1">
-<img src="image/Adobe_PDF_file_icon_32x32.png">
+<button type="button" >PDF </button>
 </a>
 </div>
-<?php } ?>	
+<?php } ?>
 <?php
 $wc=1;
 
@@ -201,7 +194,7 @@ $weeks = $calendar->weeks();
 								$class.=$pdays2[$a1[1]][$a1[0]];
 								?>
 								
-									<span class="date2 <?php echo " " . $class?>">
+									<p class="date2 <?php echo " " . $class?>">
 									
 								<?php
 									echo $al[0];
@@ -212,13 +205,39 @@ $weeks = $calendar->weeks();
 									
 								?>
 								
-								</span>
+								</p>
+								<?php
+									if($i == 1){
+										echo '<p class="date3"> ĐK NGHỈ :</p>';
+										echo '<span class="fix-add nhs"> NHS</span>';
+										echo '<span class="fix-add nhs-1">1</span>';
+										
+										echo '<span class="fix-add nhs-2">2</span>';
+										echo '<span class="fix-add nhs-3">3</span>';
+										echo '<span class="fix-add nhs-4">4</span>';
+										echo '<span class="fix-add nhs-5">5</span>';
+										echo '<span class="fix-add nhs-6">6</span>';
+										echo '<span class="fix-add tn">NHS THẾ NGHỈ</span>';
+										echo '<span class="fix-add tn1">1</span>';
+										echo '<span class="fix-add tn2">2</span>';
+										echo '<span class="fix-add tn3">3</span>';
+										echo '<span class="fix-add tn4">4</span>';
+										echo '<span class="fix-add tn5">5</span>';
+										echo '<span class="fix-add tn6">6</span>';
+										echo '<span class="fix-add k">KHÁC</span>';
+										echo '<span class="fix-add hln">HL NGHỈ</span>';
+									}
+									elseif($i == 6 or $i == 7){
+										echo '<span class="fix-add bs">BS CHO THUỐC</span>';
+										echo '<span class="fix-add nhs-small">NHS SALL</span>';
+									}
+								?>
 								
 									
 									<div class="day-content">
 										<?php echo $output ?>
 									</div>
-									
+							
 								</td>
 							<?php endforeach ?>
 						</tr>
@@ -233,14 +252,37 @@ endfor;
 ?>
 		
 	</body>
+	
 </html>
 
 
-<?php
+<?php 
 
 if($pdf !== NULL){
-	include 'pdf.php';
-	$link='http://lich.cgito.net/lich/';
-	create_pdf_and_show($link);
-       
+    $html = ob_get_contents(); 
+	//file_put_contents('filer.txt',$html);	 /usr/bin/xvfb-run /usr/local/bin/wkhtmltopdf -O Landscape -s A3 http://lich.cgito.net/lich/sa/ sa.pdf
+  include('mpdf60/mpdf.php');
+	ob_clean();
+	$cmd = '/usr/bin/xvfb-run /usr/local/bin/wkhtmltopdf -O Landscape -s A3 http://lich.cgito.net/lich/sa/ sa.pdf';
+
+	exec($cmd);
+ /*   $mpdf=new mPDF('utf-8','A3','','',32,25,27,25,16,13); 
+	$mpdf->AddPage('L');
+	$mpdf->autoScriptToLang = true;
+	 
+	$mpdf->autoVietnamese = true;
+	
+	$mpdf->autoLangToFont = true;
+    
+	$mpdf->list_indent_first_level = 0;
+
+	$stylesheet = file_get_contents('css/style_v2.css');
+	file_put_contents('stylesheet.css',$stylesheet);	
+	$mpdf->WriteHTML($stylesheet,1);
+	$mpdf->WriteHTML($html, 2);
+   
+    $mpdf->Output('mpdf.pdf','I');  
+ 
+ */  
+   
 }

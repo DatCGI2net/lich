@@ -1,7 +1,7 @@
 <?php
 
-include 'classes/calendar.php';
-require_once("lich_conv.php");
+include '../classes/calendar.php';
+require_once("../lich_conv.php");
 //$mons=array('th.1',',th.2','th.3','th.4','th.5','th.6','th.7','th.8','th.9','th.10','th.11','th.12');
 $WDAYS=array('Monday' => 'THỨ HAI','Tuesday' => 'THỨ BA','Wednesday' => 'THỨ TƯ','Thursday' => 'THỨ NĂM','Friday' => 'THỨ SÁU','Saturday' => 'THỨ BẢY', 'Sunday' =>'CHỦ NHẬT');
 
@@ -56,24 +56,17 @@ $calendar->standard('today')
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Lịch công tác</title>
-		<link type="text/css" rel="stylesheet" media="all" href="css/style.css?<?php  echo $_GET['x'];?> " />
-        <style type="text/css" media="print">
-.landscape { 
-    width: 100%; 
-    height: 100%; 
-    margin: 0% 0% 0% 0%; filter: progid:DXImageTransform.Microsoft.BasicImage(Rotation=1); 
-}
-
-</style>
+		<link type="text/css" rel="stylesheet" media="all" href="css/style.css?v=1.18" />
+     
 	</head>
-	<body>
+	<body >
 <?php 
 if((!isset($pdf))){
 ?>	
 <div class="pdf-button">
 
 <a id="pdf" href="<?php echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']; ?>?pdf=1">
-<img src="image/Adobe_PDF_file_icon_32x32.png">
+<img src="../image/Adobe_PDF_file_icon_32x32.png">
 </a>
 </div>
 <?php } ?>	
@@ -213,12 +206,38 @@ $weeks = $calendar->weeks();
 								?>
 								
 								</span>
+								<?php
+									if($i == 1){
+										echo '<span class="date3"> ĐK NGHỈ :</span>';
+										echo '<span class="fix-add nhs"> NHS</span>';
+										echo '<span class="fix-add nhs-1">1</span>';
+										
+										echo '<span class="fix-add nhs-2">2</span>';
+										echo '<span class="fix-add nhs-3">3</span>';
+										echo '<span class="fix-add nhs-4">4</span>';
+										echo '<span class="fix-add nhs-5">5</span>';
+										echo '<span class="fix-add nhs-6">6</span>';
+										echo '<span class="fix-add tn">NHS THẾ NGHỈ</span>';
+										echo '<span class="fix-add tn1">1</span>';
+										echo '<span class="fix-add tn2">2</span>';
+										echo '<span class="fix-add tn3">3</span>';
+										echo '<span class="fix-add tn4">4</span>';
+										echo '<span class="fix-add tn5">5</span>';
+										echo '<span class="fix-add tn6">6</span>';
+										echo '<span class="fix-add k">KHÁC</span>';
+										echo '<span class="fix-add hln">HL NGHỈ</span>';
+									}
+									elseif($i == 6 or $i == 7){
+										echo '<span class="fix-add bs">BS CHO THUỐC</span>';
+										echo '<span class="fix-add nhs-small">NHS SALL</span>';
+									}
+								?>
 								
 									
 									<div class="day-content">
 										<?php echo $output ?>
 									</div>
-									
+							
 								</td>
 							<?php endforeach ?>
 						</tr>
@@ -233,14 +252,17 @@ endfor;
 ?>
 		
 	</body>
+	
 </html>
 
 
-<?php
+<?php 
 
 if($pdf !== NULL){
-	include 'pdf.php';
-	$link='http://lich.cgito.net/lich/';
+	include '../pdf.php';
+	$link='http://lich.cgito.net/lich/sa/';
 	create_pdf_and_show($link);
-       
+    
+   
+   
 }
