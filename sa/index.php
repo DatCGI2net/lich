@@ -262,8 +262,4 @@ if($pdf !== NULL){
 	include '../pdf.php';
 	$link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
 	create_pdf_and_show($link);
-	//echo "link:$link";
-    
-   
-   
 }

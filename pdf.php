@@ -1,12 +1,16 @@
 <?php
 	function create_pdf_and_show($link){
 		ob_clean();
-	$cmd = "/usr/bin/xvfb-run /usr/bin/wkhtmltopdf -O Landscape -s A3 $link pdf.pdf";
+	$file='pdf.pdf';
+
+	$pdf = dirname(__FILE__) . '/tmp/' . $file;
+	#echo $pdf;exit();
+
+	$cmd = sprintf("/usr/bin/xvfb-run /usr/bin/wkhtmltopdf -O Landscape -s A3 %s %s", $link, $pdf);
 	exec($cmd);	
-    $file='pdf.pdf';
-	header('Content-type: application/pdf');
-	header('Content-Disposition: inline; filename="pdf.pdf"');
-	@readfile($file);
+    	header('Content-type: application/pdf');
+	header(sprintf('Content-Disposition: inline; filename="%s"', $file));
+	@readfile($pdf);
 	}
 
 ?>
