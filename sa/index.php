@@ -171,9 +171,12 @@ $weeks = $calendar->weeks();
 								$classes = array();
 								$output  = '';
 								$class="";
-									if($i < 6 )
-										$class.=$pdays[$mm][$number];
-										
+                                if($i < 6 ){
+                                    if(in_array($mm, $pdays)){
+                                        $class.=$pdays[$mm][$number];
+                                    }
+                                    
+                                }
 								$al = convertSolar2Lunar($number, $mm, $yy, 7.0);
 								if($class == ""){
 									if(($al[1] == 1) && ($al[0]>=1 && $al[0] <=3))
@@ -191,7 +194,9 @@ $weeks = $calendar->weeks();
 									<?php
 									
 									$class="";
-								$class.=$pdays2[$a1[1]][$a1[0]];
+                                    if(in_array($al[1], $pdays2)){
+                                        $class.=$pdays2[$al[1]][$al[0]];
+                                    }
 								?>
 								
 									<span class="date2 <?php echo " " . $class?>">
