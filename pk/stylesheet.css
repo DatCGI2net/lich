@@ -1,0 +1,332 @@
+/* Calendar Styles */
+
+.calendar {width:100%; border-collapse:collapse;}
+.calendar td {width:14%; height:100px; vertical-align:top; border:1px solid #CCC;}
+
+/*.calendar span.date {display:block; padding:4px; line-height:12px; background:#EEE;}*/
+
+
+
+.date {display:inline; padding:4px; line-height:24px; background:#EEE;
+font-size:24px;
+float:left;
+padding-left:5px;
+color:blue;
+font-weight:bold;
+display:block;
+position:absolute;
+margin:4px;
+
+}
+
+ td.prev-next span.p, span.date-7, span.p{
+color:#FF0000;
+
+}
+ td.prev-next span.date-6 , span.date-6{
+color:orange;
+
+}
+ td.prev-next span.i , span.i{
+color:yellow;
+
+}
+.date2 {
+display:block;
+ padding:4px; 
+ line-height:20px; 
+ background:#EEE;
+font-size:10px;
+float:left;
+position:relative;
+top:27px;
+padding-left:8px;
+margin:4px;
+}
+ span.datei {
+color:red;
+}
+.calendar {
+width:100%;
+margin:0;
+border:0;
+padding:0;
+border-top:0px solid green;
+margin-bottom:0px;margin-left:0em;
+padding-bottom:0px;
+padding-top:0px;
+margin-top:0px;
+margin-bottom:0px;
+height:100%;
+
+} 
+.calendar td.prev-next {background:#fff;}
+.calendar td {
+height:33.65em;
+border:2px solid #000;
+border-right:1px solid #000;
+
+}
+
+ td.p {
+border:2px solid red;
+border-left:2px solid red;
+
+}
+td span.pred{
+	color: red;
+}
+.calendar td.day:after {
+	line-height:30px;
+    float: left;
+    width: 100%;
+    overflow:hidden;
+    white-space: normal;
+    content: ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . ";
+	
+
+}
+.calendar tr.weekdays td {text-align:center; margin:0; text-transform:capitalize;font-weight:normal;
+
+}
+.calendar tr td.Saturday{
+	color:#333;
+}
+ .calendar tr td.Sunday {
+color:#333;
+} 
+.calendar tr.navigation th {
+padding:0px; font-size:24px;
+padding-top:81px; 
+font-weight:normal;
+}
+body{
+margin:0px 0px;
+}
+
+
+.calendar tr.weekdays td{
+    color:#333;
+height: 0.3cm;
+border:0px solid green;
+max-height:50px;
+
+}
+
+.navigation th{
+height: 0.4cm; 
+border:0px solid blue;   
+}
+
+@media print {
+    table.calendar {page-break-after: always;}
+}
+
+td.day{
+    height: 100%;  
+}
+ p.date3 {
+	background: #EEE;
+    display: block;
+    line-height: 20px;
+    font-size: 10px;
+    float: left;
+    position: relative;
+    top: 49px;
+    left: -25px;
+	
+}
+.p-backg{
+	    background: #EEE;
+}
+
+.calendar div.day-content-c{
+	    position: relative;
+    float: left;
+  
+    line-height: 30px;
+   
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    white-space: normal;
+}
+.dot-fix{
+	    float: left;
+    width: 100%;
+    overflow: hidden;
+    white-space: normal;
+    margin-top: 0px;
+    max-height: 30px;
+	margin-bottom: 0px;
+}
+.pdf-button{
+	padding-top: 20px;
+	
+    right: 0;
+    position: fixed;
+
+
+}
+.landscape { 
+    width: 100%; 
+    height: 100%; 
+    margin: 0% 0% 0% 0%; filter: progid:DXImageTransform.Microsoft.BasicImage(Rotation=1); 
+}
+
+td .day-content-c:after {
+line-height:30px;
+   
+    float: left;
+    width: 100%;
+    overflow:hidden;
+    white-space: normal;
+    content: ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . .";
+}	
+span.fix-add{	
+    float: left;    
+    display: block;
+    position: absolute;
+   
+    
+}
+p.fix-add{	
+    float: left;    
+    display: block;
+    position: absolute;
+   
+    
+}
+p.nhs{
+	margin-top: 100px;
+}
+span.nhs{
+	margin-top: 100px;
+}
+.nhs-1{margin-top: 130px;float: left; display: block;position: absolute;
+}
+span.nhs-2{
+	margin-top: 160px;
+}
+span.nhs-3{
+	margin-top: 190px;
+}
+span.nhs-4{
+	margin-top: 220px;
+}
+span.nhs-5{
+	margin-top: 250px;
+}
+span.nhs-6{
+	margin-top: 280px;
+}
+span.tn{
+	margin-top: 400px;
+}
+span.tn1{
+	margin-top: 430px;
+}
+span.tn2{
+	margin-top: 460px;
+}
+span.tn3{
+	margin-top: 490px;
+}
+span.tn4{
+	margin-top: 520px;
+}
+span.tn5{
+	margin-top: 550px;
+}
+span.tn6{
+	margin-top: 580px;
+}
+span.k{
+	margin-top: 700px;
+}
+span.hln{
+	margin-top: 820px;
+}
+span.bs{
+	margin-top: 730px;
+}
+span.nhs-small{
+	margin-top: 820px;
+}
+
+@media print{
+  .pdf-button{
+    display:none;
+  }
+}
