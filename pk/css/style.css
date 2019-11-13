@@ -266,7 +266,7 @@ line-height:30px;
  ". . . . . . . . . . . . . . . . . . . . "
  ". . . . . . . . . . . . . . . .";
 }	
-span.fix-add{	
+span.fix-add{
     float: left;    
     display: block;
     position: absolute;
@@ -279,9 +279,14 @@ span.nhs{
 span.nhs span{
   display: block;
   line-height: 30px;
+  margin-top: 0px;
+}
+span.nhs span.reduce{
+  margin-top: -8px;
+}
+span.nhs span.add{
   margin-top: 8px;
 }
-
 @media print{
   .pdf-button{
     display:none;

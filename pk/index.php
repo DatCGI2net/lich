@@ -37,18 +37,7 @@ $pdays2[1][2]='datei';
 $pdays2[1][3]='datei';
 $pdays2[5][5]='datei';
 $pdays2[8][15]='datei';
-//var_dump($pdays);
-/*
-$event1 = $calendar->event()->condition('timestamp', strtotime(date('F').' 21, '.date('Y')))->title('Hello All')->output('<a href="http://google.com">Going to Google</a>');
-$event2 = $calendar->event()->condition('timestamp', strtotime(date('F').' 21, '.date('Y')))->title('Something Awesome')->output('<a href="http://coreyworrell.com">My Portfolio</a><br />It\'s pretty cool in there.');
 
-$calendar->standard('today')
-	->standard('prev-next')
-	->standard('holidays')
-	->attach($event1)
-	->attach($event2);
-	
-	*/
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +45,7 @@ $calendar->standard('today')
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Lịch công tác</title>
-		<link type="text/css" rel="stylesheet" media="all" href="css/style.css?v=1.18" />
+		<link type="text/css" rel="stylesheet" media="all" href="css/style.css?v=1.20" />
      
 	</head>
 	<body >
@@ -215,7 +204,8 @@ $weeks = $calendar->weeks();
 									if($i == 1){
                                         ?>
                                         <span class="fix-add  nhs">HS P/T khoa
-                                        <span>1</span>
+                                        
+                                        <span class="add">1</span>
                                         <span>2</span>
                                         <span>HS/ĐD/NV</span>
                                         <span>1</span>
@@ -224,32 +214,14 @@ $weeks = $calendar->weeks();
                                         <span>4</span>
                                         <span>5</span>
                                         <span>6</span>
-                                        <span>&nbsp;</span>
-                                        <span>&nbsp;</span>
-                                        <span>&nbsp;</span>
-                                        
+                                        <span>7</span>
+                                        <span>8</span>
                                         <span>HL</span>
                                         <span>1</span>
                                         <span>2</span>
                                         <span>CT KHÁC:</span>
                                         </span>
                                         <?php
-                                        /*
-										echo '<span class="fix-add nhs-1">HS P/T khoa</span>';
-										echo '<span class="fix-add nhs-1">1</span>';
-										echo '<span class="fix-add nhs-2">2</span>';
-										echo '<span class="fix-add nhs">HS/ĐD/NV</span>';
-										echo '<span class="fix-add nhs-1">1</span>';
-										echo '<span class="fix-add nhs-2">2</span>';
-										echo '<span class="fix-add nhs-3">3</span>';
-										echo '<span class="fix-add nhs-4">4</span>';
-										echo '<span class="fix-add nhs-5">5</span>';
-										echo '<span class="fix-add nhs-6">6</span>';
-										echo '<span class="fix-add tn">HL</span>';
-										echo '<span class="fix-add tn1">1</span>';
-										echo '<span class="fix-add tn2">2</span>';
-										echo '<span class="fix-add k">CT KHÁC:</span>';
-                                        */
 									}
 									elseif($i == 6 or $i == 7){
 										//echo '<span class="fix-add bs">BS CHO THUỐC</span>';
