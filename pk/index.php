@@ -39,7 +39,6 @@ $pdays2[5][5]='datei';
 $pdays2[8][15]='datei';
 
 ?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -54,7 +53,7 @@ if((!isset($pdf))){
 ?>	
 <div class="pdf-button">
 
-<a id="pdf" href="<?php echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']; ?>?pdf=1">
+<a id="pdf" href="<?php echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']; ?>?pdf=1&y=<?php echo $year ?>">
 <img src="../image/Adobe_PDF_file_icon_32x32.png">
 </a>
 </div>
@@ -256,6 +255,6 @@ endfor;
 
 if($pdf !== NULL){
 	include '../pdf.php';
-	$link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+	$link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . "?y=" . $year;
 	create_pdf_and_show($link);
 }

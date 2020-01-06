@@ -9,7 +9,7 @@
     }
 
 	$pdf = $pdf_dir . $file;
-	#echo $pdf;exit();
+	//echo $link;exit();
 
 	$cmd = sprintf("/usr/bin/xvfb-run /usr/bin/wkhtmltopdf -O Landscape -s A4 %s %s", $link, $pdf);
 	exec($cmd);
