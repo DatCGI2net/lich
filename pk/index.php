@@ -202,11 +202,11 @@ $weeks = $calendar->weeks();
 								<?php
 									if($i == 1){
                                         ?>
-                                        <span class="fix-add  nhs">HS P/T khoa
+                                        <span class="fix-add  nhs">NHS T/P:
                                         
                                         <span class="add">1</span>
                                         <span>2</span>
-                                        <span>HS/ĐD/NV</span>
+                                        <span>NV:</span>
                                         <span>1</span>
                                         <span>2</span>
                                         <span>3</span>
@@ -215,10 +215,10 @@ $weeks = $calendar->weeks();
                                         <span>6</span>
                                         <span>7</span>
                                         <span>8</span>
-                                        <span>HL</span>
+                                        <span>HL:</span>
                                         <span>1</span>
                                         <span>2</span>
-                                        <span>CT KHÁC:</span>
+                                        <span>Khác:</span>
                                         </span>
                                         <?php
 									}
