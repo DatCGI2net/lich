@@ -206,9 +206,9 @@ $weeks = $calendar->weeks();
 
                                         <span class="add">1</span>
                                         <span>2</span>
-                                        <span></span>
-                                        <span></span>
-                                        <span>NV:</span>
+                                        <span>&nbsp;</span>
+                                        <span>&nbsp;</span>
+                                        <span>NV Nghỉ:</span>
                                         <span>1</span>
                                         <span>2</span>
                                         <span>3</span>
@@ -217,17 +217,14 @@ $weeks = $calendar->weeks();
                                         <span>6</span>
                                         <span>7</span>
                                         <span>8</span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
+                                        <span>&nbsp;</span>
+                                        <span>&nbsp;</span>
+                                        <span>&nbsp;</span>
+                                        <span>&nbsp;</span>
                                         <span>HL:</span>
                                         <span>1</span>
                                         <span>2</span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
+                                        <span>&nbsp;</span>
                                         <span>Khác:</span>
                                         </span>
                                         <?php
