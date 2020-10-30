@@ -7,7 +7,7 @@ $WDAYS=array('Monday' => 'THỨ HAI','Tuesday' => 'THỨ BA','Wednesday' => 'TH�
 
 $month = isset($_GET['m']) ? $_GET['m'] : NULL;
 $year  = isset($_GET['y']) ? $_GET['y'] : date("Y")+1;
-//$year=date("Y"); 
+//$year=date("Y");
 $pdf = isset($_GET['pdf']) ? $_GET['pdf'] : NULL;
 
 if($pdf !== NULL)
@@ -45,25 +45,25 @@ $pdays2[8][15]='datei';
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Lịch công tác</title>
 		<link type="text/css" rel="stylesheet" media="all" href="css/style.css?v=1.20" />
-     
+
 	</head>
 	<body >
-<?php 
+<?php
 if((!isset($pdf))){
-?>	
+?>
 <div class="pdf-button">
 
 <a id="pdf" href="<?php echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']; ?>?pdf=1&y=<?php echo $year ?>">
 <img src="../image/Adobe_PDF_file_icon_32x32.png">
 </a>
 </div>
-<?php } ?>	
+<?php } ?>
 <?php
 $wc=1;
 
 for($m=1;$m<=12;$m++):
 
-$calendar = Calendar::factory($m, $year, array('week_start' => 1));	
+$calendar = Calendar::factory($m, $year, array('week_start' => 1));
 
 $wdays = $calendar->days();
 $weeks = $calendar->weeks();
@@ -71,17 +71,17 @@ $weeks = $calendar->weeks();
 
 
 ?>
-				
-					<?php foreach ($weeks as $week): 
+
+					<?php foreach ($weeks as $week):
                         //ignore the first week if it is printed in previous month
                         //var_dump($week[0][1]);
-                        
+
                         //list($checknumber, $checkcurrent, $checkdata) = $week[0];
-                        
+
                         if ($week[0][1] === false && $m >1)
                             continue;
-                        
-                            
+
+
                     ?>
 					<?php //if ($wc++ > 1) echo "<p>";
                     ?>
@@ -92,28 +92,28 @@ $weeks = $calendar->weeks();
 						<th colspan="5" class="current-month"><?php echo $m . '/' . $year ?> </th>
 						<th class="next-month"></th>
 					</tr>
-					
+
 				</thead>
 					<tbody>
 					<tr class="weekdays">
-						<?php 
-						
+						<?php
+
 						foreach ($wdays as $day): ?>
 							<td class="<?php echo "$day "; if($day > 5) echo 'weekends';?>"><?php echo $WDAYS[$day] ?></td>
 						<?php endforeach ?>
 					</tr>
 						<tr class="main">
-							<?php 
+							<?php
 							$i=0;
 							$c=0;
 							foreach ($week as $day): ?>
 								<?php
 								$i++;
 								list($number, $current, $data) = $day;
-                                
-                                
-                                
-                                
+
+
+
+
 								//var_dump($day);
 								// to lunar
 								$mm=$m;
@@ -138,7 +138,7 @@ $weeks = $calendar->weeks();
 										/*}elseif($mm==1){
 											$mm=12;
 											$yy--;
-											
+
 										}elseif($mm==12){
 											$mm=1;
 											$yy++;
@@ -150,12 +150,12 @@ $weeks = $calendar->weeks();
 										if($mm>12){
 											$mm=1;
 											$yy++;
-										
+
 										}
 									}
 								}
-								
-								
+
+
 								$classes = array();
 								$output  = '';
 								$class="";
@@ -163,7 +163,7 @@ $weeks = $calendar->weeks();
                                     if(in_array($mm, $pdays)){
                                         $class.=$pdays[$mm][$number];
                                     }
-                                    
+
                                 }
 								$al = convertSolar2Lunar($number, $mm, $yy, 7.0);
 								if($class == ""){
@@ -172,7 +172,7 @@ $weeks = $calendar->weeks();
 								}
 								?>
 								<td class="day <?php echo $class ?>">
-								
+
 									<span class="date <?php echo ' date-' , $i; echo " " , $class;?>" ><?php echo $number ;
 									if($number ==1)
 										echo '/' . $mm;
@@ -180,32 +180,34 @@ $weeks = $calendar->weeks();
 
 									?></span>
 									<?php
-									
+
 									$class="";
                                     if(in_array($al[1], $pdays2)){
                                         $class.=$pdays2[$al[1]][$al[0]];
                                     }
 								?>
-								
+
 									<span class="date2 <?php echo " " . $class?>">
-									
+
 								<?php
 									echo $al[0];
 									if($al[0] ==1)
 										echo '/' . $al[1];
-										
-									
-									
+
+
+
 								?>
-								
+
 								</span>
 								<?php
 									if($i == 1){
                                         ?>
                                         <span class="fix-add  nhs">NHS T/P:
-                                        
+
                                         <span class="add">1</span>
                                         <span>2</span>
+                                        <span></span>
+                                        <span></span>
                                         <span>NV:</span>
                                         <span>1</span>
                                         <span>2</span>
@@ -215,9 +217,17 @@ $weeks = $calendar->weeks();
                                         <span>6</span>
                                         <span>7</span>
                                         <span>8</span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
                                         <span>HL:</span>
                                         <span>1</span>
                                         <span>2</span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
                                         <span>Khác:</span>
                                         </span>
                                         <?php
@@ -227,31 +237,31 @@ $weeks = $calendar->weeks();
 										//echo '<span class="fix-add nhs-small">NHS SALL</span>';
 									}
 								?>
-								
-									
+
+
 									<div class="day-content">
 										<?php echo $output ?>
 									</div>
-							
+
 								</td>
 							<?php endforeach ?>
 						</tr>
 						</tbody>
 						</table>
 					<?php endforeach ?>
-				
-			
-		
+
+
+
 <?php
 endfor;
 ?>
-		
+
 	</body>
-	
+
 </html>
 
 
-<?php 
+<?php
 
 if($pdf !== NULL){
 	include '../pdf.php';
